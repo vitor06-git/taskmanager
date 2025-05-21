@@ -21,7 +21,7 @@ import com.vitor.taskmanager.service.UserService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/v/tasks")
+@RequestMapping("/api/v1/tasks")
 public class TaskController {
 	
 	@Autowired

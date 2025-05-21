@@ -1,8 +1,10 @@
 package com.vitor.taskmanager.model;
 
+import java.util.Collection;
 import java.util.List;
 
-import com.vitor.taskmanager.model.Task;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -21,7 +23,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public  class User implements UserDetails {
 	
 	
 	@Id
@@ -65,6 +67,37 @@ public class User {
 		this.password = password;
 	}
 
+	@Override
+	public boolean isAccountNonExpired() {
+		return true; // pode implementar sua lógica
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return true; // pode implementar sua lógica
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true; // pode implementar sua lógica
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return true; // pode implementar sua lógica
+	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getUsername() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 
 
